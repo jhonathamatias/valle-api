@@ -1,0 +1,27 @@
+{% extends "partials/admin.twig" %}
+
+{% block content_header %}
+    <i class="material-icons icon-title">engineering</i> <h3>Colaboradores</h3>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light button-color modal-trigger" href="#add-collaborator"><i class="material-icons">add</i></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-content">
+        {# <div id="collaborator-grid"></div> #}
+    </div>
+    {% include 'collaborators/add_collaborator_modal.twig' %}
+{% endblock %}
+
+{% block aftercss %}
+   <link rel="stylesheet" href="/assets/css/grid.css">
+{% endblock %}
+
+{% block jsafter %}
+    <script src="/libs/gridjs/dist/gridjs.min.js"></script>
+    <script src="/libs/validatorjs-master/dist/validator.js"></script>
+    <script src="/libs/validatorjs-master/dist/lang/pt_BR.js"></script>
+    <script src="/assets/js/form-tools.js"></script>
+    <script src="/assets/js/collaborators.js"></script>
+{% endblock %}

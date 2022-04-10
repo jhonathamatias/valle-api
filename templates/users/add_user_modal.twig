@@ -1,0 +1,47 @@
+<!-- Modal Structure -->
+<div id="add-user" class="modal">
+	<div class="modal-content">
+		<h5>Criar Usúario</h5>
+		<form id="user-form" autocomplete="off">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="user_name" autocomplete="off" class="form-field" data-name="Nome" name="user_name" type="text" class="validate">
+					<label for="user_name">Nome</label>
+					<span class="helper-text" data-error="wrong" data-success=""></span>
+				</div>
+
+				<div class="input-field col s12">
+					<input id="user_email" class="form-field" data-name="Email" name="user_email" type="text" class="validate">
+					<label for="user_email">Email</label>
+					<span class="helper-text" data-error="wrong" data-success=""></span>
+				</div>
+				<div class="input-field col s12">
+					<input id="user_password" class="form-field" data-name="Senha" name="user_password" type="password" class="validate">
+					<label for="user_password">Senha</label>
+					<span class="helper-text" data-error="wrong" data-success=""></span>
+				</div>
+
+				<div class="input-field col s12">
+					<select id="user_type_id" class="form-field" data-name="Tipo de usúario" name="user_type_id">
+						<option value="" disabled selected>Selecione o tipo do usúario</option>
+						<option value="1">Administrador</option>
+						<option value="2">Técnico</option>
+					</select>
+					<label>Tipo do usúario</label>
+					<span class="helper-text" data-error="wrong" data-success=""></span>
+				</div>
+			</div>
+		</form>
+		<div class="modal-footer">
+			<div class="col s12">
+				<button class="btn-flat modal-close waves-effect text-red" onclick="formReset()">
+					<i class="material-icons left">close</i>
+					<strong>Cancelar</strong>
+				</button>
+				<button class="btn-flat waves-effect" id="user-create" name="action">
+					<i class="material-icons left">save</i>
+					<strong>Criar</strong>
+				</button>
+			</div>
+		</div>
+	</div>

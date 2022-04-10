@@ -1,0 +1,23 @@
+.grid {
+    overflow-y: auto;
+}
+
+.gridjs-pagination {
+    margin: 15px;
+    font-size: 1.2rem;
+}
+    .gridjs-head {
+        margin: 15px;
+    }
+        .gridjs-pages button {
+            border: none;
+            margin: 5px;
+            border-radius: 2px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .gridjs-pages button.gridjs-currentPage {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }

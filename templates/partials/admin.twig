@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EduOS</title>
+
+		<link rel="icon" type="image/png" href="/assets/img/favicon.ico"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="/libs/materialize/css/materialize.min.css">
+		<link rel="stylesheet" href="/assets/css/styles.css"> {% block aftercss %}{% endblock %}
+		</head>
+		<body>
+			<div id="root">
+				<main>
+					<header>
+						<nav>
+							<div class="nav-wrapper">
+								<a href="#" class="waves-effect waves-light sidenav-trigger" data-target="slide-out">
+									<i class="material-icons icon">menu</i>
+								</a>
+								<ul id="nav-mobile" class="header-menu right hide-on-med-and-down">
+									<li>
+										<a href="#" class="tooltipped" data-position="bottom" data-tooltip="Notificações">
+											<i class="material-icons icon">notifications</i>
+										</a>
+									</li>
+									<li>
+										<a href="/logout" class="tooltipped" data-position="bottom" data-tooltip="Sair">
+											<i class="material-icons icon">logout</i>
+										</a>
+									</li>
+									{# <li id="user"><a href="#"><img src="/assets/img/user.jpg" id="user-img" alt=""></a></li> #}
+								</ul>
+
+							</div>
+						</nav>
+					</header>
+					<div class="content-box">
+						<div class="subheader"></div>
+
+						{% include 'partials/sidebar.twig' %}
+
+						<div class="container index-2">
+							<div class="container-header"> {% block content_header %}{% endblock %}
+								</div>
+								{% block content %}{% endblock %}
+							</div>
+						</div>
+					</main>
+				</div>
+				<script src="/libs/materialize/js/materialize.min.js"></script>
+				<script src="/libs/momentjs/moment-with-locales.min.js"></script>
+
+				<script src="/assets/js/template.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+				{% block jsafter %}{% endblock %}
+			</body>
+		</html>

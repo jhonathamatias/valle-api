@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>EduOS - Sign In</title>
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/sign-in.css">
+    <link rel="stylesheet" href="/libs/sweetalert2/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="signin" class="row">
+            <div class="logo"></div>
+
+            <div class="row title">
+                <h5>Faça seu login</h5>
+            </div>
+            <div>
+                <div class="input-field col s12">
+                    <input id="email" type="email" data-name="Email" class="validate">
+                    <label for="user">Email</label>
+                    <span class="helper-text" data-error="wrong" data-success="">Digite seu Email</span>
+                </div>
+            </div>
+            <div>
+                <div class="input-field col s12">
+                   <input id="password" type="password" data-name="Senha" class="validate">
+                   <label for="password">Senha</label>
+                   <a id="password-visibility">
+                       <i class="material-icons">visibility</i>
+                   </a>
+
+                   <span class="helper-text" data-error="wrong" data-success="">Digite sua Senha</span>
+                </div>
+            </div>
+            <div id="button-continue" class="col s12">
+                <button class="waves-effect waves-custom btn col s12">
+                    <span class="btn-text">continuar</span>
+                    <div id="loading" class="preloader-wrapper small active">
+                        <div class="spinner-layer spinner-main-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div><div class="gap-patch">
+                            <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/libs/materialize/js/materialize.min.js"></script>
+    <script src="/libs/validatorjs-master/dist/validator.js"></script>
+    <script src="/libs/validatorjs-master/dist/lang/pt_BR.js"></script>
+    <script src="/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/assets/js/sign-in.js"></script>
+</body>
+</html>

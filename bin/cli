@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+// Registrar aqui comandos Symfony CLI
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Valle\Console\Cli;
+
+$command = new Cli();
+
+$application = new Application();
+
+$application->add($command);
+$application->setDefaultCommand($command->getName());
+
+$application->run();

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it valle-api_php8_1 vendor/bin/phinx $@

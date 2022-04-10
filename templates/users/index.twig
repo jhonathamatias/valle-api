@@ -1,0 +1,27 @@
+{% extends "partials/admin.twig" %}
+
+{% block content_header %}
+    <i class="material-icons icon-title">group</i> <h3>Usúarios</h3>
+    <div class="container-header-button">
+        <a class="btn-floating btn-large waves-effect waves-light button-color modal-trigger" href="#add-user"><i class="material-icons">person_add</i></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-content">
+        {# {% include 'users/user_grid.twig' %} #}
+        <div id="user-grid" class="grid"></div>
+    </div>
+    {% include 'users/add_user_modal.twig' %}
+{% endblock %}
+
+{% block aftercss %}
+   <link rel="stylesheet" href="/assets/css/grid.css">
+{% endblock %}
+
+{% block jsafter %}
+    <script src="/libs/gridjs/dist/gridjs.min.js"></script>
+    <script src="/libs/validatorjs-master/dist/validator.js"></script>
+    <script src="/libs/validatorjs-master/dist/lang/pt_BR.js"></script>
+    <script src="/assets/js/users.js"></script>
+{% endblock %}

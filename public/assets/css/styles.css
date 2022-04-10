@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #DC6ACF;
+  --secondary-color: #57A773;
+  --tertiary-color: #08B2E3;
+  --light-blue-color: #08B2E3;
+  --white-color: #EFE9F4;
+}
+
+body {
+  /* font-family: 'Poppins', sans-serif !important; */
+}
+
+body::-webkit-scrollbar, div::-webkit-scrollbar, ul::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track, div::-webkit-scrollbar-track, ul::-webkit-scrollbar-track {
+  background: #ddd;        /* color of the tracking area */
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb, ul::-webkit-scrollbar-thumb {
+  background-color: #aaa;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #ddd;  /* creates padding around scroll thumb */
+}
+
+/*
+ * Custom focus input border color 
+*/
+input:not([type]),
+input[type=text]:focus:not(.browser-default),
+input[type=password]:focus:not(.browser-default),
+input[type=email]:focus:not(.browser-default),
+input[type=url]:focus:not(.browser-default),
+input[type=time]:focus:not(.browser-default),
+input[type=date]:focus:not(.browser-default),
+input[type=datetime]:focus:not(.browser-default),
+input[type=datetime-local]:focus:not(.browser-default),
+input[type=tel]:focus:not(.browser-default),
+input[type=number]:focus:not(.browser-default),
+input[type=search]:focus:not(.browser-default),
+textarea.materialize-textarea:focus:not(.browser-default) {
+  border-bottom: 1px solid var(--light-blue-color) !important;
+  box-shadow: 0 1px 0 0 var(--light-blue-color) !important;
+}
+
+/*
+ * Custom focus label color
+*/
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+  color: var(--light-blue-color);
+}
+
+/*
+ * Custom effect waves
+*/
+.waves-effect.waves-custom .waves-ripple {
+  background-color: rgba(116, 92, 151, 0.5);
+}
+
+#root {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+}
+
+header nav {
+  background-color: var(--secondary-color);
+}
+
+header nav .nav-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-menu img#user-img {
+  border-radius: 100%;
+  width: 38px;
+  margin-top: 10px;
+}
+
+.icon {
+  font-size: 30px !important;
+}
+
+.icon-title {
+  font-size: 35px !important;
+  margin-right: 15px;
+}
+
+.content-box {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  height: 100%;
+}
+
+.subheader {
+  height: 180px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.index-2 {
+  z-index: 2;
+}
+
+.container-header {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  min-height: 7.2rem;
+  position: relative;
+}
+
+.container-header h1,
+.container-header h2,
+.container-header h3,
+.container-header h4,
+.container-header h5,
+.container-header h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: 600;
+}
+
+.container-header-button {
+  position: absolute;
+  right: 0;
+}
+
+.main-color {
+  background-color: var(--main-color) !important;
+}
+
+.button-color {
+  background-color: #08B2E3 !important;
+}
+
+.main-button-color {
+  background-color: var(--secondary-color) !important;
+}
+
+.light-blue {
+  background-color: var(--light-blue-color) !important;
+}
+
+.tertiary-color {
+  background-color: var(--tertiary-color) !important;
+}
+
+.container-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  background-color: #fff;
+  height: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.0);
+  border-radius: 20px 20px 0 0;
+}
+
+tr {
+  align-items: center;
+}
+
+th, td {
+  padding: 20px;
+}
+
+table.clickable tr {
+  cursor: pointer;
+}
+
+.text-red {
+  color: #F44336;
+}
+
+.preloader-wrapper.ex-small {
+  width: 25px;
+  height: 25px;
+}
+
+button.btn, button.btn-flat {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+@media only screen and (min-width: 993px) {
+  nav a.sidenav-trigger {
+    display: inline-block;
+  }
+}
+
+.caption-title {
+  font-weight: 500;
+}
+
+.caption-text {
+  font-size: .9rem;
+}
+
+.caption-email {
+  margin-top: 15px;
+}
+
+.modal {
+  /* overflow-y: initial !important; */
+}

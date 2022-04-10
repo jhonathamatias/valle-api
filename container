@@ -1,0 +1,12 @@
+#!/bin/bash
+
+clear
+
+echo "Executando script no container:"
+
+if [ "$1" == '' ]; then
+        echo -e "\e[91mInforme um comando para o container ex:\e[0m \e[1m./container ls -l"
+        exit
+fi
+
+docker exec -it valle-api_php8_1 $@
