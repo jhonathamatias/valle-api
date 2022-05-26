@@ -33,7 +33,7 @@ class SignIn
             return $response
                 ->withStatus(401);
         }
-
+        
         $response->getBody()->write(Auth::success('Sign in successfull', [
             'token' => ServicesAuth::createToken([$user]),
             'user'  => $user

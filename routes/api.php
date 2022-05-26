@@ -16,6 +16,8 @@ return function (\Slim\Routing\RouteCollectorProxy $group) {
      */
     $group->post('/products', 'Products.controller:create');
     $group->get('/products', 'Products.controller:search');
+    $group->get('/products/sizes', 'Products.controller:getSizes');
+    $group->get('/products/colors', 'Products.controller:getColors');
 
     /**
      * Services routes
