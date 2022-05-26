@@ -23,8 +23,9 @@
         "doctrine/dbal": "^3.2",
         "respect/validation": "^2.2",
         "symfony/console": "^5.3",
-        "aws/aws-sdk-php": "^3.208",
-        "fzaninotto/faker": "^1.5"
+        "aws/aws-sdk-php": "^3.222",
+        "fzaninotto/faker": "^1.5",
+        "league/flysystem-aws-s3-v3": "^3.0"
     },
 
     "autoload": {

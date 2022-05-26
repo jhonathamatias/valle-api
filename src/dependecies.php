@@ -94,23 +94,14 @@ $container->set('Users.model', function (ContainerInterface $c) {
 });
 
 $container->set('Products.model', function (ContainerInterface $c) {
-    return new \Valle\Models\Products($c->get('repository.factory'));
+    return new \Valle\Models\Products($c->get('repository.factory'), $c->get('File.service'));
 });
 
-$container->set('Company.model', function (ContainerInterface $c) {
-    return new \Valle\Models\Company($c->get('repository.factory'));
-});
-
-$container->set('ServiceOrder.model', function (ContainerInterface $c) {
-    return new \Valle\Models\Users($c->get('repository.factory'));
-});
-
-$container->set('Collaborators.model', function (ContainerInterface $c) {
-    return new \Valle\Models\Collaborators($c->get('repository.factory'));
-});
-
-$container->set('UsersRoles.model', function (ContainerInterface $c) {
-    return new \Valle\Models\UsersRoles($c->get('repository.factory'));
+/**
+ * Services
+ */
+$container->set('File.service', function (ContainerInterface $c) {
+    return new \Valle\Services\File();
 });
 
 return $container;

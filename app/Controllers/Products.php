@@ -21,12 +21,25 @@ class Products
 
         try {
             $post = (object)$request->getParsedBody();
-    
-            ValidatePostProps::verify($post, ['name', 'description', 'image', 'price']);
+            $file = (object)$request->getUploadedFiles();
+            
+            $post->image = $file->image;
+
+            ValidatePostProps::verify($post, [
+                'name', 
+                'description', 
+                'image', 
+                'price',
+                'product_size_id',
+                'product_color_id'
+            ]);
 
             $productId = $this->model->create($post);
 
-            $body->write(API::success('products', ['id' => $productId]));
+            $body->write(API::success('data', [
+                'product' => ['id' => $productId],
+                'created' => true
+            ]));
 
             return $response->withStatus(200);
         } catch (\Valle\Models\Exceptions\AlreadyExistsException $e) {
@@ -82,6 +95,52 @@ class Products
             return $response->withStatus(404);
         } catch (Driver\Exception $e) {
             $response->getBody()->write(API::error('Verifique os parâmetros passados'));
+
+            return $response->withStatus(400);
+        } catch (\Exception $e) {
+            $response->getBody()->write(API::error($e->getMessage()));
+
+            return $response->withStatus(400);
+        }
+    }
+
+    public function getSizes(Request $request, Response $response): Response
+    {
+        try {
+            $sizes = $this->model->getSizes();
+    
+            $response->getBody()->write(API::success('sizes', $sizes));
+
+            return $response->withStatus(200);
+        } catch (\Valle\Models\Exceptions\NotFoundException $e) {
+            $response->getBody()->write(API::error($e->getMessage()));
+
+            return $response->withStatus(404);
+        } catch (Driver\Exception $e) {
+            $response->getBody()->write(API::error('Houve um erro'));
+
+            return $response->withStatus(400);
+        } catch (\Exception $e) {
+            $response->getBody()->write(API::error($e->getMessage()));
+
+            return $response->withStatus(400);
+        }
+    }
+
+    public function getColors(Request $request, Response $response): Response
+    {
+        try {
+            $colors = $this->model->getColors();
+    
+            $response->getBody()->write(API::success('colors', $colors));
+
+            return $response->withStatus(200);
+        } catch (\Valle\Models\Exceptions\NotFoundException $e) {
+            $response->getBody()->write(API::error($e->getMessage()));
+
+            return $response->withStatus(404);
+        } catch (Driver\Exception $e) {
+            $response->getBody()->write(API::error('Houve um erro'));
 
             return $response->withStatus(400);
         } catch (\Exception $e) {
