@@ -24,4 +24,9 @@ final class CreateTableSession extends AbstractMigration
             ->addColumn('last_activity', 'integer')
             ->create();
     }
+
+    public function down()
+    {
+        $users = $this->table('sessions')->drop()->save();
+    }
 }

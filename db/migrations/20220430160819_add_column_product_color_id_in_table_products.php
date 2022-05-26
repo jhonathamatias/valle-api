@@ -23,4 +23,14 @@ final class AddColumnProductColorIdInTableProducts extends AbstractMigration
         $table->addColumn('product_color_id', 'integer', ['after' => 'product_size_id'])->update();
         $table->addForeignKey('product_color_id', 'product_color', ['id'], ['constraint' => 'fk_products_product_color_id'])->update();
     }
+
+    public function down()
+    {
+        $table = $this->table('products');
+
+        $table->removeColumn('product_color_id')
+            ->save();
+
+        $table->dropForeignKey('fk_products_product_color_id')->save();
+    }
 }
