@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
@@ -22,5 +23,15 @@ final class AddColumnProductSizeIdInTableProducts extends AbstractMigration
 
         $table->addColumn('product_size_id', 'integer', ['after' => 'price'])->update();
         $table->addForeignKey('product_size_id', 'product_size', ['id'], ['constraint' => 'fk_products_product_size_id'])->update();
+    }
+
+    public function down()
+    {
+        $table = $this->table('products');
+
+        $table->removeColumn('product_size_id')
+            ->save();
+
+        $table->dropForeignKey('fk_products_product_size_id')->save();
     }
 }

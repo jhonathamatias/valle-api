@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
@@ -21,7 +22,7 @@ final class TableProductSize extends AbstractMigration
         $table = $this->table('product_size');
 
         $table->addColumn('size', 'string')
-        ->create();
+            ->create();
 
         $table->insert(['size' => 'PP']);
         $table->insert(['size' => 'P']);
@@ -34,5 +35,13 @@ final class TableProductSize extends AbstractMigration
         $table->insert(['size' => 'EGG']);
 
         $table->save();
+    }
+
+    public function down()
+    {
+        $table = $this->table('product_size');
+
+        $table->removeColumn('size')
+            ->save();
     }
 }
